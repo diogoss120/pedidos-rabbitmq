@@ -1,3 +1,5 @@
+using Order.Api.Bus;
+using Order.Api.Bus.Interfaces;
 using Order.Api.Services;
 using Order.Api.Services.Interfaces;
 using Order.Api.Setup;
@@ -19,6 +21,8 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+builder.Services.AddScoped<IEventBus, EventBus>();
+builder.Services.AddScoped<IOrderEventProducer, OrderEventProducer>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 
 var app = builder.Build();

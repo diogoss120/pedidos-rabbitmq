@@ -10,13 +10,17 @@ namespace Order.Api.Setup
         {
             app.MapGet("/", () => "Hello world!").WithName("Home");
 
-            app.MapGroup("Orderrs")
-                .MapPost("/orders", async ([FromBody] CreateOrderRequest request, [FromServices] IOrderService service) =>
-                {
-                    var orderId = await service.CreateOrderAsync(request);
+            app.MapPost("/orders", async ([FromBody] CreateOrderRequest request, [FromServices] IOrderService service) =>
+            {
+                var orderId = await service.CreateOrderAsync(request);
 
-                    return Results.Accepted($"/orders/{orderId}", new { OrderId = orderId });
-                });
+                return Results.Accepted($"/orders/{orderId}", new { OrderId = orderId });
+            });
+
+            app.MapGet("/orders/{id}", async (Guid id, [FromServices] IOrderService service) =>
+            {
+                return Results.Ok(await service.GetOrder(id));
+            });
 
         }
     }

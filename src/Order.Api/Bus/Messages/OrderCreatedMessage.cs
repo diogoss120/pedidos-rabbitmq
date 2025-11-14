@@ -1,17 +1,17 @@
-﻿namespace Order.Api.DTOs
+﻿namespace Order.Api.Bus.Messages
 {
-    public class CreateOrderRequest
+    public class OrderCreatedMessage
     {
         public Guid Id { get; set; }
         public string CustomerName { get; set; } = string.Empty;
         public string CustomerEmail { get; set; } = string.Empty;
 
-        public List<CreateOrderItemRequest> Items { get; set; } = new();
+        public List<OrderItemMessage> Items { get; set; } = new();
 
         public string PaymentMethod { get; set; } = string.Empty;
     }
 
-    public class CreateOrderItemRequest
+    public class OrderItemMessage
     {
         public string ProductName { get; set; } = string.Empty;
         public int Quantity { get; set; }
