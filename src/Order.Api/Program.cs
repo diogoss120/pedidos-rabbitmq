@@ -3,6 +3,7 @@ using Order.Api.Bus.Interfaces;
 using Order.Api.Services;
 using Order.Api.Services.Interfaces;
 using Order.Api.Setup;
+using Shared.Messaging;
 
 var builder = WebApplication.CreateBuilder(args);
 

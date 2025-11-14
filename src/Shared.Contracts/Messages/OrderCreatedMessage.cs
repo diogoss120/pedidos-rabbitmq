@@ -1,4 +1,4 @@
-﻿namespace Order.Api.Bus.Messages
+﻿namespace Shared.Contracts.Messages
 {
     public class OrderCreatedMessage
     {

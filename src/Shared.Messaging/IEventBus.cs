@@ -1,4 +1,4 @@
-﻿namespace Order.Api.Bus.Interfaces
+﻿namespace Shared.Messaging
 {
     public interface IEventBus
     {

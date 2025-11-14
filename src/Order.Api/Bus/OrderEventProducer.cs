@@ -1,6 +1,7 @@
 ﻿using Order.Api.Bus.Interfaces;
-using Order.Api.Bus.Messages;
 using Order.Api.DTOs;
+using Shared.Contracts.Messages;
+using Shared.Messaging;
 
 namespace Order.Api.Bus
 {
